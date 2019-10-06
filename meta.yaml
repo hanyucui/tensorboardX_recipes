@@ -2,12 +2,14 @@
 
 package:
   name: tensorboardx
-  version: {{ version }}
+  version: {{ version }}+db1
 
 source:
-  fn: tensorboardX-{{ version }}.tar.gz                                        # [unix]
-  url: https://github.com/lanpa/tensorboardX/archive/v{{ version }}.tar.gz     # [unix]
-  sha256: c7b5dca231afccc68a95d03b8ff81fa9931d4a30542e4491d31cf009572c4672     # [unix]
+  fn: tensorboardX-{{ version }}.tar.gz
+  url: https://github.com/lanpa/tensorboardX/archive/v{{ version }}.tar.gz
+  sha256: c7b5dca231afccc68a95d03b8ff81fa9931d4a30542e4491d31cf009572c4672
+  patches:
+    - 0001-fixed-regression-of-206-489.patch
 
 requirements:
   build:
