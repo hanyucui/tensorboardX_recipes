@@ -1,0 +1,35 @@
+{% set version = "1.8" %}
+
+package:
+  name: tensorboardx
+  version: {{ version }}
+
+source:
+  fn: tensorboardX-{{ version }}.tar.gz                                        # [unix]
+  url: https://github.com/lanpa/tensorboardX/archive/v{{ version }}.tar.gz     # [unix]
+  sha256: c7b5dca231afccc68a95d03b8ff81fa9931d4a30542e4491d31cf009572c4672     # [unix]
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+    - numpy
+    - protobuf >=3.2.0
+    - six
+
+test:
+  requires:
+    - pytest
+    - matplotlib
+  imports:
+    - tensorboardX
+
+about:
+  home: https://github.com/lanpa/tensorboardX
+  license: MIT
+  summary: TensorBoardX lets you watch Tensors Flow without Tensorflow
+  dev_url: https://github.com/lanpa/tensorboardX
+
